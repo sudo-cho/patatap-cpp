@@ -3,9 +3,6 @@
 #include <GL/gl.h>
 #include <SDL2/SDL.h>
 #include <glimac/common.hpp>
-#include <glimac/Sphere.hpp>
-#include "level.hpp"
-#include "camera.hpp"
 
 using namespace glimac;
 
@@ -23,17 +20,6 @@ public:
   void drawObject();
 };
 
-class SphereDraw{
-public:
-  GLuint vbo, vao;
-  glm::mat4 ProjMatrix, MVPMatrix, MVMatrix, NormalMatrix;
-
-  SphereDraw(Sphere*);
-  ~SphereDraw();
-
-  void drawSphere(Sphere*, GLuint, GLuint, GLuint);
-};
-
 class WallDraw{
 public:
   GLuint vbo, vao;
@@ -48,12 +34,4 @@ public:
   void drawWall(GLuint, GLuint, GLuint, glm::mat4, GLint);
   void drawPathWall(GLuint, GLuint, GLuint, glm::mat4, GLint);
 
-};
-
-class PathDraw{
-public:
-	PathDraw();
-	~PathDraw();
-
-	void drawPath(GLuint, GLuint, GLuint, Level, Camera, GLint);
 };

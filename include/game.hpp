@@ -15,7 +15,5 @@ public:
   Game();
   ~Game();
 
-  void initProgram(Program*, GLuint *, GLuint *, GLuint *, GLint *);
-
+  void initProgram(Program *program, GLuint *locationMVPMatrix, GLuint *locationMVMatrix, GLuint *locationNormalMatrix);
 };
-
