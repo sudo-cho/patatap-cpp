@@ -40,7 +40,7 @@ ifeq ($(host_os),linux)
 ldlibs   := -lSDL2 -lGL
 endif
 ifeq ($(host_os),osx)
-ldlibs   := -framework SDL2 -framework OpenGL
+ldlibs   := -framework GLUT -framework OpenGL -framework Cocoa -framework SDL2
 endif
 
 

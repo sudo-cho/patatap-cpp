@@ -1,6 +1,10 @@
 #pragma once
 
+#ifdef __APPLE__
+#else
 #include <GL/glew.h>
+#endif
+
 #include "glm.hpp"
 
 namespace glimac {

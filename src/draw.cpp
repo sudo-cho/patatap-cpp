@@ -1,5 +1,12 @@
+#ifdef __APPLE__
+#include <OpenGL/gl.h>
+#include <GLUT/glut.h>
+#else
 #include <GL/glew.h>
+#include <GL/glut.h>
 #include <GL/gl.h>
+#endif
+
 #include <glimac/common.hpp>
 #include <glimac/glm.hpp>
 #include <SDL2/SDL.h>
