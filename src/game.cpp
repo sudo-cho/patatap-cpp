@@ -15,7 +15,7 @@ Game::Game(){
   SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_CORE);
 
   this->window = SDL_CreateWindow(
-                                        "Dungeon Master IMAC", 400, 200, 640, 640,
+                                        "patatap c++", 400, 200, 640, 640,
                                         SDL_WINDOW_OPENGL|SDL_WINDOW_RESIZABLE);
 
   // Check that the window was successfully created
@@ -40,7 +40,7 @@ Game::~Game(){
 	SDL_Quit();
 }
 
-void Game::initProgram(Program *program, GLuint *locationMVPMatrix, GLuint *locationMVMatrix, GLuint *locationNormalMatrix,GLint *uTexture){
+void Game::initProgram(Program *program, GLuint *locationMVPMatrix, GLuint *locationMVMatrix, GLuint *locationNormalMatrix){
 
   *program = loadProgram(
                          "assets/shaders/3D.vs.glsl",
@@ -51,5 +51,4 @@ void Game::initProgram(Program *program, GLuint *locationMVPMatrix, GLuint *loca
   *locationMVPMatrix = glGetUniformLocation(program->getGLId(), "uMVPMatrix");
   *locationMVMatrix = glGetUniformLocation(program->getGLId(), "uMVMatrix");
   *locationNormalMatrix = glGetUniformLocation(program->getGLId(), "uNormalMatrix");
-  *uTexture = glGetUniformLocation(program->getGLId(), "uTexture");
 }
