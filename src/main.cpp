@@ -34,6 +34,8 @@ int CALLBACK WinMain(
 
   game.initProgram(&program, &locationMVPMatrix, &locationMVMatrix, &locationNormalMatrix);
 
+  DefaultShape newShape;
+
   bool _continue = true;
   while(_continue){
     SDL_Event e;
@@ -44,10 +46,9 @@ int CALLBACK WinMain(
     }
 
     /* game draw objects*/
-
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-    path.drawPath(locationMVPMatrix, locationMVMatrix, locationNormalMatrix, level, camera, uTexture);
+    newShape.drawShape();
 
     SDL_Delay(1000/60);
     SDL_GL_SwapWindow(game.window);

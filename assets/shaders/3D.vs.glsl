@@ -27,7 +27,7 @@ void main() {
   // vTexCoords = aVertexTexCoords;
 
   // Calcul de la position projetée
-  gl_Position = uMVPMatrix * vertexPosition;
+     gl_Position = uMVPMatrix * vertexPosition;
   // gl_Position = vec4(aVertexPosition, 0, 1);
 
   vPosition_vs = vec3 (aVertexPosition,1);
