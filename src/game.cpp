@@ -6,8 +6,8 @@
 #include <GL/gl.h>
 #endif
 
-#include <iostream>
 #include <SDL2/SDL.h>
+#include <iostream>
 #include <assert.h>
 
 #include "game.hpp"

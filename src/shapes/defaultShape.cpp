@@ -28,11 +28,11 @@ DefaultShape::DefaultShape () {
 
 	glGenVertexArrays(1, &this->vao);
 	glBindVertexArray(this->vao);
+	glBindBuffer(GL_ARRAY_BUFFER, this->vbo);
 
+  glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 2 * sizeof(GLfloat), (void*)0);
 	glEnableVertexAttribArray(0);
 
-	glBindBuffer(GL_ARRAY_BUFFER, this->vbo);
-	glVertexAttribPointer(0, 2, GL_FLOAT,GL_FALSE, 2 * sizeof(GLfloat), 0);
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
 
 	glBindVertexArray(0);
@@ -40,9 +40,7 @@ DefaultShape::DefaultShape () {
 
 void DefaultShape::drawShape () {
   glBindVertexArray(this->vao);
-
   glDrawArrays(GL_TRIANGLES, 0, 3);
-
   glBindVertexArray(0);
 }
 
