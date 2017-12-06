@@ -29,7 +29,7 @@ cxxflags := $(strip \
 cppfiles := $(call rglob,src,*.cpp)
 ofiles   := $(patsubst src/%.cpp,obj/%.o,$(cppfiles))
 
-exe      := bin/dungeongame$(dot_exe)
+exe      := bin/patatap-cpp$(dot_exe)
 
 ifeq ($(host_os),windows)
 SHELL=cmd

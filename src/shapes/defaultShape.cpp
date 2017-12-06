@@ -7,15 +7,12 @@
 #include <GL/gl.h>
 #endif
 
-#include <glimac/common.hpp>
-#include <glimac/glm.hpp>
+#include <iostream>
 #include <SDL2/SDL.h>
 
-#include "draw.hpp"
+#include "shapes/defaultShape.hpp"
 
-using namespace glimac;
-
-DefaultShape::initShape () {
+DefaultShape::DefaultShape () {
 
 	glGenBuffers(1, &this->vbo);
 	glBindBuffer(GL_ARRAY_BUFFER, this->vbo);
@@ -26,7 +23,7 @@ DefaultShape::initShape () {
 		0.f, 0.5f
 	};
 
-	glBufferData(GL_ARRAY_BUFFER, 6 * sizeof(GLfloat), vertices, GL_STATIC_DRAW);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
 
 	glGenVertexArrays(1, &this->vao);
@@ -44,7 +41,12 @@ DefaultShape::initShape () {
 void DefaultShape::drawShape () {
   glBindVertexArray(this->vao);
 
-  glDrawArrays(GL_TRIANGLES,0,3);
+  glDrawArrays(GL_TRIANGLES, 0, 3);
 
   glBindVertexArray(0);
+}
+
+DefaultShape::~DefaultShape () {
+  glDisableVertexAttribArray(0);
+  std::cout << "destructor called" << std::endl;
 }
