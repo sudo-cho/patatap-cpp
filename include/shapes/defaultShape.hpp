@@ -8,7 +8,7 @@ class DefaultShape {
 
 public:
   GLuint vbo, vao;
-
+  
   DefaultShape();
   ~DefaultShape();
 
