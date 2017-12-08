@@ -4,13 +4,23 @@
 #define glDeleteVertexArrays glDeleteVertexArraysAPPLE
 #endif
 
+#include <vector>
+
 class DefaultShape {
 
-public:
+private:
   GLuint vbo, vao;
-  
-  DefaultShape();
+  std::vector<GLfloat> vertices ;
+
+  void setVertices (std::vector<GLfloat> & arrayVertices);
+
+public:
+  DefaultShape(std::vector<GLfloat> & t_vertices);
   ~DefaultShape();
+
+  GLuint getVbo ();
+  GLuint getVao ();
+  std::vector<GLfloat> & getVertices ();
 
   void drawShape();
 };

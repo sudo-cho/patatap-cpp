@@ -86,7 +86,13 @@ int CALLBACK WinMain(
   glDeleteShader(vertexShader);
   glDeleteShader(fragmentShader);
 
-  DefaultShape newShape;
+  std::vector<GLfloat> vertices = {
+		-0.5f, -0.5f,
+		0.5f, -0.5f,
+		0.f, 0.5f
+	};
+
+  DefaultShape newShape(vertices);
 
   bool _continue = true;
   while(_continue){
