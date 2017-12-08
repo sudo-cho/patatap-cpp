@@ -1,8 +1,9 @@
+#include <GL/glew.h>
+
 #ifdef __APPLE__
 #include <OpenGL/gl.h>
 #include <OpenGL/glext.h>
 #else
-#include <GL/glew.h>
 #include <GL/gl.h>
 #endif
 
@@ -37,15 +38,10 @@ void Window::init () {
 
   glcontext = SDL_GL_CreateContext(window);
 
-#ifdef __APPLE__
-#else
-
   GLint error;
   if(GLEW_OK != (error = glewInit())) {
     std::cerr << "Impossible d'initialiser Glew" << std::endl;
   }
-
-#endif
 
   glEnable(GL_DEPTH_TEST);
 

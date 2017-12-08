@@ -1,8 +1,9 @@
+#include <GL/glew.h>
+
 #ifdef __APPLE__
 #include <OpenGL/gl.h>
 #include <OpenGL/glext.h>
 #else
-#include <GL/glew.h>
 #include <GL/gl.h>
 #endif
 

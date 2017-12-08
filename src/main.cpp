@@ -1,8 +1,9 @@
+#include <GL/glew.h>
+
 #ifdef __APPLE__
 #include <OpenGL/gl.h>
 #include <OpenGL/glext.h>
 #else
-#include <GL/glew.h>
 #include <GL/gl.h>
 #endif
 
@@ -87,9 +88,9 @@ int CALLBACK WinMain(
   glDeleteShader(fragmentShader);
 
   std::vector<GLfloat> vertices = {
-		-0.25f, -0.25f,
-		0.25f, -0.25f,
-		0.25f, 0.25f
+		-0.25f, -0.25f, 0.f,
+		0.25f, -0.25f, 0.f,
+		0.25f, 0.25f, 0.f
 	};
 
   DefaultShape newShape(vertices);
@@ -117,7 +118,7 @@ int CALLBACK WinMain(
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glUseProgram(shaderProgram);
 
-    patatap.render();
+    newShape.drawShape();
 
     SDL_Delay(1000/60);
     SDL_GL_SwapWindow(newWindow.window);
