@@ -1,4 +1,3 @@
-
 #ifdef __APPLE__
 #include <OpenGL/gl.h>
 #include <OpenGL/glext.h>
@@ -11,7 +10,9 @@
 #include <SDL2/SDL.h>
 #include <string>
 
-#include "game.hpp"
+#include "game.h"
+#include "window.h"
+#include "helpers/resource_manager.h"
 #include "shapes/defaultShape.hpp"
 
 using namespace std;
@@ -31,7 +32,6 @@ const char* fragmentShaderSource = "#version 330 core\n"
   "}\n\0";
 
 #ifdef _WIN32
-
 #include <windows.h>
 int CALLBACK WinMain(
                      _In_ HINSTANCE hInstance,
@@ -39,17 +39,17 @@ int CALLBACK WinMain(
                      _In_ LPSTR     lpCmdLine,
                      _In_ int       nCmdShow
                      )
-
 #else
-
   int main(int argc, char *argv[])
-
 #endif
-
 {
-  Game game;
+  Game patatap;
+  Window newWindow(640, 480);
 
-  glEnable(GL_DEPTH_TEST);
+  newWindow.init();
+  patatap.init();
+
+  GLfloat deltaTime = 0.0f;
 
   int vertexShader = glCreateShader(GL_VERTEX_SHADER);
   glShaderSource(vertexShader, 1, &vertexShaderSource, NULL);
@@ -87,9 +87,9 @@ int CALLBACK WinMain(
   glDeleteShader(fragmentShader);
 
   std::vector<GLfloat> vertices = {
-		-0.5f, -0.5f,
-		0.5f, -0.5f,
-		0.f, 0.5f
+		-0.25f, -0.25f,
+		0.25f, -0.25f,
+		0.25f, 0.25f
 	};
 
   DefaultShape newShape(vertices);
@@ -102,17 +102,28 @@ int CALLBACK WinMain(
       if(e.type == SDL_QUIT) {
         _continue = false;
       }
+
+      switch(e.type) {
+      case SDL_KEYDOWN:
+        std::cout << "keydown pressed" << std::endl;
+        break;
+      }
     }
+
+    patatap.processInput(deltaTime);
+    patatap.update(deltaTime);
 
     glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glUseProgram(shaderProgram);
 
-    newShape.drawShape();
+    patatap.render();
 
     SDL_Delay(1000/60);
-    SDL_GL_SwapWindow(game.window);
+    SDL_GL_SwapWindow(newWindow.window);
   }
+
+  ResourceManager::Clear();
 
   return 0;
 }

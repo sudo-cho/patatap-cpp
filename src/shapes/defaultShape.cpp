@@ -55,5 +55,5 @@ std::vector<GLfloat> &DefaultShape::getVertices () {
 }
 
 void DefaultShape::setVertices (std::vector<GLfloat> & arrayVertices) {
-  this->vertices = arrayVertices;
+  vertices = arrayVertices;
 }
