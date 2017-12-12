@@ -3,8 +3,8 @@
 
 #include <map>
 #include <string>
-
 #include <GL/glew.h>
+
 #include "helpers/shader.h"
 
 // A static singleton ResourceManager class that hosts several

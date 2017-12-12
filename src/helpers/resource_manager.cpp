@@ -47,6 +47,9 @@ Shader ResourceManager::loadShaderFromFile(const GLchar *vShaderFile, const GLch
       // Convert stream into string
       vertexCode = vShaderStream.str();
       fragmentCode = fShaderStream.str();
+      //degbugging
+      std::cout << "vs" << vertexCode << std::endl;
+      std::cout << "fs" << fragmentCode << std::endl;
       // If geometry shader path is present, also load a geometry shader
       if (gShaderFile != nullptr)
         {

@@ -15,7 +15,7 @@
 Window::Window (GLuint t_width, GLuint t_height)
   : m_width(t_width), m_height(t_height)
 {
-
+  this->init();
 }
 
 void Window::init () {

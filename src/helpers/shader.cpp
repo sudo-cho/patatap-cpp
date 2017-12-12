@@ -12,6 +12,7 @@ Shader &Shader::Use()
 
 void Shader::Compile(const GLchar* vertexSource, const GLchar* fragmentSource, const GLchar* geometrySource)
 {
+
   GLuint sVertex, sFragment, gShader;
   // Vertex Shader
   sVertex = glCreateShader(GL_VERTEX_SHADER);
