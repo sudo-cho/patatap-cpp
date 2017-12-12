@@ -1,12 +1,7 @@
 #ifndef WINDOW_H
 #define WINDOW_H
 
-#ifdef __APPLE__
-#include <OpenGL/glext.h>
-#else
 #include <GL/glew.h>
-#endif
-
 #include <SDL2/SDL.h>
 
 class Window{

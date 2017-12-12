@@ -3,12 +3,8 @@
 
 #include <string>
 
-#ifdef __APPLE__
-#include <OpenGL/glext.h>
-#else
-#include <GL/glew.h>
-#endif
 
+#include <GL/glew.h>
 #include <glm/glm.hpp>
 #include <glm/gtc/type_ptr.hpp>
 

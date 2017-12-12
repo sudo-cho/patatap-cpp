@@ -1,9 +1,3 @@
-#ifdef __APPLE__
-#define glGenVertexArrays glGenVertexArraysAPPLE
-#define glBindVertexArray glBindVertexArrayAPPLE
-#define glDeleteVertexArrays glDeleteVertexArraysAPPLE
-#endif
-
 #include <vector>
 
 class DefaultShape {

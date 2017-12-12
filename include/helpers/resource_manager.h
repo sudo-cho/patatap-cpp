@@ -4,12 +4,7 @@
 #include <map>
 #include <string>
 
-#ifdef __APPLE__
-#include <OpenGL/glext.h>
-#else
 #include <GL/glew.h>
-#endif
-
 #include "helpers/shader.h"
 
 // A static singleton ResourceManager class that hosts several
