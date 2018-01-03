@@ -8,12 +8,12 @@ This project is a port of the famous web application [patatap](https://patatap.c
 
 Patatap-cpp relies on multiple dependencies,
 
-Dependencies
------------------------ 
-GNU Make ang g++11
-GLM
-SDL 2
-SDL Mixer
+#### Dependencies
+
++ GNU Make ang g++11
++ GLM
++ SDL 2
++ SDL Mixer
 
 In order to build the project, you need to do :
 
