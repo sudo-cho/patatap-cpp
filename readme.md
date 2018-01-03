@@ -19,7 +19,7 @@ In order to build the project, you need to do :
 
 ```bash
 git clone https://github.com/sudo-cho/patatap-cpp
-make
+make re
 ```
 
 It will generate the coresponding execution file in the build/ folder.
