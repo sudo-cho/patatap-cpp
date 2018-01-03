@@ -4,4 +4,6 @@
 **/*.out
 **/*.exe
 bin/**
-bin/dm
+bin/patatap-cpp
+.DS_Store
+**/.DS_Store
