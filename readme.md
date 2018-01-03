@@ -11,7 +11,6 @@ Patatap-cpp relies on multiple dependencies,
 #### Dependencies
 
 + GNU Make ang g++11
-+ GLM
 + SDL 2
 + SDL Mixer
 
